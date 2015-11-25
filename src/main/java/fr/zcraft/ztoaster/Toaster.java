@@ -32,13 +32,21 @@ package fr.zcraft.ztoaster;
 
 import fr.zcraft.zlib.components.commands.Commands;
 import fr.zcraft.zlib.components.gui.Gui;
+import fr.zcraft.zlib.components.scoreboard.Sidebar;
+import fr.zcraft.zlib.components.scoreboard.SidebarScoreboard;
 import fr.zcraft.zlib.core.ZPlugin;
 import fr.zcraft.zlib.tools.PluginLogger;
 import fr.zcraft.ztoaster.commands.AddCommand;
 import fr.zcraft.ztoaster.commands.OpenCommand;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+
 import java.util.ArrayList;
 
-public class Toaster extends ZPlugin 
+public class Toaster extends ZPlugin implements Listener
 {
     /**
      * A counter for all the toasts created (until toaster restart).
@@ -49,7 +57,13 @@ public class Toaster extends ZPlugin
      * A list of all the toasts.
      */
     static private ArrayList<Toast> toasts;
-    
+
+    /**
+     * The screen of the toaster.
+     */
+    private Sidebar toasterSidebar;
+
+
     @Override
     public void onEnable()
     {
@@ -58,9 +72,19 @@ public class Toaster extends ZPlugin
         toasts = new ArrayList<>();
         toastCounter = 0;
         
-        loadComponents(Gui.class, Commands.class, ToasterWorker.class);
+        loadComponents(Gui.class, Commands.class, ToasterWorker.class, SidebarScoreboard.class);
         
         Commands.register("toaster", AddCommand.class, OpenCommand.class);
+
+        getServer().getPluginManager().registerEvents(this, this);
+
+
+        toasterSidebar = new ToasterSidebar();
+
+        for (Player player : getServer().getOnlinePlayers())
+            toasterSidebar.addRecipient(player);
+
+        toasterSidebar.runAutoRefresh(true);
     }
     
     @Override
@@ -68,7 +92,8 @@ public class Toaster extends ZPlugin
     {
         PluginLogger.info("Unplugging toaster.");
     }
-    
+
+
     /**
      * @return The id for a new toast.
      */
@@ -95,5 +120,11 @@ public class Toaster extends ZPlugin
         toasts.add(toast);
         return toast;
     }
-    
+
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    public void onPlayerJoin(PlayerJoinEvent ev)
+    {
+        toasterSidebar.addRecipient(ev.getPlayer());
+    }
 }
