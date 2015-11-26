@@ -33,6 +33,7 @@ package fr.zcraft.ztoaster.commands;
 import fr.zcraft.zlib.components.commands.Command;
 import fr.zcraft.zlib.components.commands.CommandException;
 import fr.zcraft.zlib.components.commands.CommandInfo;
+import fr.zcraft.zlib.components.gui.Gui;
 import fr.zcraft.zlib.components.worker.WorkerCallback;
 import fr.zcraft.zlib.tools.PluginLogger;
 import fr.zcraft.ztoaster.*;
@@ -53,7 +54,7 @@ public class AddCommand extends Command
             public void finished(Integer toastId)
             {
                 player.sendMessage("DING ! Toast " + toastId + " is ready !");
-                
+                Gui.update(ToastExplorer.class);
             }
 
             @Override
