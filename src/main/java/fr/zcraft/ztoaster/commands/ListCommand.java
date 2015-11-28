@@ -30,32 +30,50 @@
 
 package fr.zcraft.ztoaster.commands;
 
-import fr.zcraft.zlib.components.commands.*;
-import fr.zcraft.ztoaster.*;
-import org.bukkit.entity.Player;
+import fr.zcraft.zlib.components.commands.Command;
+import fr.zcraft.zlib.components.commands.CommandException;
+import fr.zcraft.zlib.components.commands.CommandInfo;
+import fr.zcraft.ztoaster.Toast;
+import fr.zcraft.ztoaster.Toaster;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
-@CommandInfo(name = "add", usageParameters = "[toast count]")
-public class AddCommand extends Command
+@CommandInfo(name = "list", usageParameters = "[cooked|not_cooked]")
+public class ListCommand extends Command
 {
     @Override
     protected void run() throws CommandException
     {
-        Player cook = playerSender();
-        
         if(args.length == 0)
         {
-            Toast toast = ToasterWorker.addToast(cook);
-            cook.sendMessage("Toast " + toast.getToastId() + " added.");
+            showToasts(Arrays.asList(Toaster.getToasts()));
         }
         else
         {
-            int toastCount = getIntegerParameter(0);
-            for(int i = toastCount; i --> 0;)
+            ArrayList<Toast> toasts = new ArrayList<Toast>();
+            Toast.CookingStatus status = getEnumParameter(0, Toast.CookingStatus.class);
+            
+            for(Toast toast : Toaster.getToasts())
             {
-                ToasterWorker.addToast(cook);
+                if(toast.getStatus().equals(status))
+                    toasts.add(toast);
             }
             
-            cook.sendMessage(toastCount + " toasts added.");
+            showToasts(toasts);
+        }
+    }
+    
+    private void showToasts(Collection<Toast> toasts)
+    {
+        if(toasts.isEmpty())
+        {
+            info("There are no toasts here ...");
+        }
+        
+        for(Toast toast : toasts)
+        {
+            sender.sendMessage("  Toast #" + toast.getToastId());
         }
     }
 
