@@ -33,10 +33,11 @@ package fr.zcraft.ztoaster.commands;
 import fr.zcraft.zlib.components.commands.Command;
 import fr.zcraft.zlib.components.commands.CommandException;
 import fr.zcraft.zlib.components.commands.CommandInfo;
+import fr.zcraft.zlib.components.i18n.I;
 import fr.zcraft.zlib.components.worker.WorkerCallback;
 import fr.zcraft.zlib.tools.PluginLogger;
-import fr.zcraft.ztoaster.*;
-import org.bukkit.ChatColor;
+import fr.zcraft.ztoaster.Toast;
+import fr.zcraft.ztoaster.ToasterWorker;
 import org.bukkit.entity.Player;
 
 @CommandInfo(name = "add")
@@ -52,7 +53,7 @@ public class AddCommand extends Command
             @Override
             public void finished(Integer toastId)
             {
-                player.sendMessage("DING ! Toast " + toastId + " is ready !");
+                player.sendMessage(I.t("DING ! Toast {0} is ready !", toastId));
                 
             }
 
@@ -60,13 +61,11 @@ public class AddCommand extends Command
             public void errored(Throwable exception)
             {
                 PluginLogger.error("Error while toasting", exception);
-                player.sendMessage(ChatColor.RED + "Oh no ! A toasted exception !");
-                player.sendMessage(ChatColor.RED + "See toaster logs for details.");
+                player.sendMessage(I.t("{ce}Oh no ! A toasted exception !"));
+                player.sendMessage(I.t("{ce}See toaster logs for details."));
             }
         });
         
-        player.sendMessage("Toast " + toast.getToastId() + " added.");
-        
+        player.sendMessage(I.t("Toast {0} added.", toast.getToastId()));
     }
-
 }

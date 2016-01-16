@@ -32,6 +32,7 @@ package fr.zcraft.ztoaster;
 
 import fr.zcraft.zlib.components.gui.ExplorerGui;
 import fr.zcraft.zlib.components.gui.GuiUtils;
+import fr.zcraft.zlib.components.i18n.I;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -40,21 +41,22 @@ public class ToastExplorer extends ExplorerGui<Toast>
     @Override
     protected void onUpdate()
     {
-        setTitle("Toaster contents");
+        setTitle(I.t("{black}Toaster contents"));
         
         setData(Toaster.getToasts());
         
         //DO NOT TOUCH THE TOASTS !
         setMode(ExplorerGui.Mode.READONLY);
-        
     }
     
     @Override
     protected ItemStack getViewItem(Toast toast)
     {
         if(toast.getStatus().equals(Toast.CookingStatus.COOKED))
-            return GuiUtils.makeItem(Material.GRILLED_PORK, "Cooked toast #" + toast.getToastId());
+            // Title of the cooked toast item in GUI
+            return GuiUtils.makeItem(Material.GRILLED_PORK, I.t("{white}Cooked toast #{0}", toast.getToastId()));
         else
-            return GuiUtils.makeItem(Material.PORK, "Raw toast #" + toast.getToastId());
+            // Title of the raw toast item in GUI
+            return GuiUtils.makeItem(Material.PORK, I.t("{white}Raw toast #{0}", toast.getToastId()));
     }
 }

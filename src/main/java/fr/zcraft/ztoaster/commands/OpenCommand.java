@@ -45,5 +45,4 @@ public class OpenCommand extends Command
     {
         Gui.open(playerSender(), new ToastExplorer());
     }
-
 }
