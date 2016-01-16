@@ -68,6 +68,11 @@ msgstr  "{ce}Voir les logs du toaster pour plus de détails."
 msgid   "Toast {0} added."
 msgstr  "Toast {0} ajouté."
 
+#: fr/zcraft/ztoaster/commands/AddCommand.java:63
+#, java-format
+msgid   "{0} toasts added."
+msgstr  "{0} toasts ajoutés."
+
 #. Output of the command /toaster list, without toasts.
 #: fr/zcraft/ztoaster/commands/ListCommand.java:74
 msgid   "There are no toasts here ..."
