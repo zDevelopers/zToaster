@@ -31,8 +31,13 @@
 
 package fr.zcraft.ztoaster;
 
-import fr.zcraft.zlib.components.worker.*;
+import fr.zcraft.zlib.components.gui.Gui;
+import fr.zcraft.zlib.components.i18n.I;
+import fr.zcraft.zlib.components.worker.Worker;
+import fr.zcraft.zlib.components.worker.WorkerCallback;
+import fr.zcraft.zlib.components.worker.WorkerRunnable;
 import fr.zcraft.zlib.tools.PluginLogger;
+import org.bukkit.entity.Player;
 
 public class ToasterWorker extends Worker
 {
@@ -40,6 +45,27 @@ public class ToasterWorker extends Worker
      * Optimal cooking time for making carefully baked toasts.
      */
     static public int TOAST_COOKING_TIME = 4269;
+    
+    static public Toast addToast(final Player cook)
+    {
+        return ToasterWorker.addToast(new WorkerCallback<Integer>()
+        {
+            @Override
+            public void finished(Integer toastId)
+            {
+                cook.sendMessage(I.t("DING! Toast {0} is ready !", toastId));
+                Gui.update(ToastExplorer.class);
+            }
+
+            @Override
+            public void errored(Throwable exception)
+            {
+                PluginLogger.error("Error while toasting", exception);
+                cook.sendMessage(I.t("{ce}Oh no! A toasted exception !"));
+                cook.sendMessage(I.t("{ce}See toaster logs for details."));
+            }
+        });
+    }
     
     /**
      * Creates a new toast, and adds it to the toaster queue.

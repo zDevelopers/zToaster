@@ -38,6 +38,7 @@ import fr.zcraft.zlib.components.scoreboard.SidebarScoreboard;
 import fr.zcraft.zlib.core.ZPlugin;
 import fr.zcraft.zlib.tools.PluginLogger;
 import fr.zcraft.ztoaster.commands.AddCommand;
+import fr.zcraft.ztoaster.commands.ListCommand;
 import fr.zcraft.ztoaster.commands.OpenCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -77,7 +78,7 @@ public class Toaster extends ZPlugin implements Listener
         
         loadComponents(Gui.class, Commands.class, ToasterWorker.class, SidebarScoreboard.class, I18n.class);
         
-        Commands.register("toaster", AddCommand.class, OpenCommand.class);
+        Commands.register("toaster", AddCommand.class, OpenCommand.class, ListCommand.class);
 
         I18n.useDefaultPrimaryLocale();
         I18n.setFallbackLocale(Locale.US);
