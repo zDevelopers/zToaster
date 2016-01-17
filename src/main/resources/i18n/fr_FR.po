@@ -15,6 +15,7 @@ msgstr  "Project-Id-Version: PACKAGE VERSION\n"
         "MIME-Version: 1.0\n"
         "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
+        "Plural-Forms: nplurals=2; plural=n>1;\n"
 
 #: fr/zcraft/ztoaster/ToasterSidebar.java:75
 msgid   "{darkgreen}{bold}Cook"
@@ -70,8 +71,10 @@ msgstr  "Toast {0} ajouté."
 
 #: fr/zcraft/ztoaster/commands/AddCommand.java:63
 #, java-format
-msgid   "{0} toasts added."
-msgstr  "{0} toasts ajoutés."
+msgid   "One toast added."
+msgid_plural "{0} toasts added."
+msgstr[0]  "Un toast ajouté."
+msgstr[1]  "{0} toasts ajoutés."
 
 #. Output of the command /toaster list, without toasts.
 #: fr/zcraft/ztoaster/commands/ListCommand.java:74

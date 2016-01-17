@@ -60,7 +60,7 @@ public class AddCommand extends Command
                 ToasterWorker.addToast(cook);
             }
             
-            cook.sendMessage(I.t("{0} toasts added.", toastCount));
+            cook.sendMessage(I.tn("One toast added.", "{0} toasts added.", toastCount, toastCount));
         }
     }
 }
