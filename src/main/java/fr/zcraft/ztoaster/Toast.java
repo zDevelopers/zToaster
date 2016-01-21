@@ -32,7 +32,7 @@ package fr.zcraft.ztoaster;
 
 public class Toast 
 {
-    public enum CookingStatus {COOKED, NOT_COOKED};
+    public enum CookingStatus {COOKED, NOT_COOKED}
     
     private CookingStatus status = CookingStatus.NOT_COOKED;
     private final int toastId;

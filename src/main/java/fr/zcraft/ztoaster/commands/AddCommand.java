@@ -30,9 +30,14 @@
 
 package fr.zcraft.ztoaster.commands;
 
-import fr.zcraft.zlib.components.commands.*;
-import fr.zcraft.ztoaster.*;
+import fr.zcraft.zlib.components.commands.Command;
+import fr.zcraft.zlib.components.commands.CommandException;
+import fr.zcraft.zlib.components.commands.CommandInfo;
+import fr.zcraft.zlib.components.i18n.I;
+import fr.zcraft.ztoaster.Toast;
+import fr.zcraft.ztoaster.ToasterWorker;
 import org.bukkit.entity.Player;
+
 
 @CommandInfo(name = "add", usageParameters = "[toast count]")
 public class AddCommand extends Command
@@ -45,7 +50,7 @@ public class AddCommand extends Command
         if(args.length == 0)
         {
             Toast toast = ToasterWorker.addToast(cook);
-            cook.sendMessage("Toast " + toast.getToastId() + " added.");
+            cook.sendMessage(I.t("Toast {0} added.", toast.getToastId()));
         }
         else
         {
@@ -55,8 +60,7 @@ public class AddCommand extends Command
                 ToasterWorker.addToast(cook);
             }
             
-            cook.sendMessage(toastCount + " toasts added.");
+            cook.sendMessage(I.tn("One toast added.", "{0} toasts added.", toastCount, toastCount));
         }
     }
-
 }

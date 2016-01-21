@@ -33,8 +33,10 @@ package fr.zcraft.ztoaster.commands;
 import fr.zcraft.zlib.components.commands.Command;
 import fr.zcraft.zlib.components.commands.CommandException;
 import fr.zcraft.zlib.components.commands.CommandInfo;
+import fr.zcraft.zlib.components.i18n.I;
 import fr.zcraft.ztoaster.Toast;
 import fr.zcraft.ztoaster.Toaster;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -68,13 +70,13 @@ public class ListCommand extends Command
     {
         if(toasts.isEmpty())
         {
-            info("There are no toasts here ...");
+            // Output of the command /toaster list, without toasts.
+            info(I.t("There are no toasts here ..."));
         }
         
         for(Toast toast : toasts)
         {
-            sender.sendMessage("  Toast #" + toast.getToastId());
+            sender.sendMessage(I.t("  Toast #{0}", toast.getToastId()));
         }
     }
-
 }

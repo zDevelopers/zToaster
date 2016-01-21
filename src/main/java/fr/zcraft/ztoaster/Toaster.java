@@ -32,11 +32,14 @@ package fr.zcraft.ztoaster;
 
 import fr.zcraft.zlib.components.commands.Commands;
 import fr.zcraft.zlib.components.gui.Gui;
+import fr.zcraft.zlib.components.i18n.I18n;
 import fr.zcraft.zlib.components.scoreboard.Sidebar;
 import fr.zcraft.zlib.components.scoreboard.SidebarScoreboard;
 import fr.zcraft.zlib.core.ZPlugin;
 import fr.zcraft.zlib.tools.PluginLogger;
-import fr.zcraft.ztoaster.commands.*;
+import fr.zcraft.ztoaster.commands.AddCommand;
+import fr.zcraft.ztoaster.commands.ListCommand;
+import fr.zcraft.ztoaster.commands.OpenCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -44,6 +47,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.util.ArrayList;
+import java.util.Locale;
+
 
 public class Toaster extends ZPlugin implements Listener
 {
@@ -71,9 +76,12 @@ public class Toaster extends ZPlugin implements Listener
         toasts = new ArrayList<>();
         toastCounter = 0;
         
-        loadComponents(Gui.class, Commands.class, ToasterWorker.class, SidebarScoreboard.class);
+        loadComponents(Gui.class, Commands.class, ToasterWorker.class, SidebarScoreboard.class, I18n.class);
         
         Commands.register("toaster", AddCommand.class, OpenCommand.class, ListCommand.class);
+
+        I18n.useDefaultPrimaryLocale();
+        I18n.setFallbackLocale(Locale.US);
 
         getServer().getPluginManager().registerEvents(this, this);
 

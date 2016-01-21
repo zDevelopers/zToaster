@@ -29,9 +29,9 @@
  */
 package fr.zcraft.ztoaster;
 
+import fr.zcraft.zlib.components.i18n.I;
 import fr.zcraft.zlib.components.scoreboard.Sidebar;
 import fr.zcraft.zlib.components.scoreboard.SidebarMode;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
@@ -71,14 +71,13 @@ public class ToasterSidebar extends Sidebar
     public List<String> getContent(Player player)
     {
         return Arrays.asList(
-                "",
-                ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "Cook",
+                I.t("{darkgreen}{bold}Cook"),
                 player.getDisplayName(),
                 "",
-                ChatColor.YELLOW + "" + ChatColor.BOLD + "Inside the toaster",
+                I.t("{yellow}{bold}Inside the toaster"),
                 insideTheToaster + "",
                 "",
-                ChatColor.GOLD + "" + ChatColor.BOLD + "Cooked",
+                I.t("{gold}{bold}Cooked"),
                 (toastsCount - insideTheToaster) + ""
         );
     }
@@ -87,9 +86,9 @@ public class ToasterSidebar extends Sidebar
     public String getTitle(Player player)
     {
         if(insideTheToaster > 0)
-            return ChatColor.RED + "" + ChatColor.BOLD + "\u2668 Toaster \u2668";
+            return I.t("{red}{bold}\u2668 Toaster \u2668");
 
         else
-            return ChatColor.BLUE + "Toaster";
+            return I.t("{blue}Toaster");
     }
 }
