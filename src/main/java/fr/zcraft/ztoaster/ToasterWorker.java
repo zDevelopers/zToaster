@@ -53,7 +53,7 @@ public class ToasterWorker extends Worker
             @Override
             public void finished(Integer toastId)
             {
-                cook.sendMessage(I.t("DING! Toast {0} is ready !", toastId));
+                I.sendT(cook, "DING! Toast {0} is ready !", toastId);
                 Gui.update(ToastExplorer.class);
             }
 
@@ -61,8 +61,8 @@ public class ToasterWorker extends Worker
             public void errored(Throwable exception)
             {
                 PluginLogger.error("Error while toasting", exception);
-                cook.sendMessage(I.t("{ce}Oh no! A toasted exception !"));
-                cook.sendMessage(I.t("{ce}See toaster logs for details."));
+                I.sendT(cook, "{ce}Oh no! A toasted exception !");
+                I.sendT(cook, "{ce}See toaster logs for details.");
             }
         });
     }

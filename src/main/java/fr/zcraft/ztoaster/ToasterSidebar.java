@@ -30,12 +30,14 @@
 package fr.zcraft.ztoaster;
 
 import fr.zcraft.zlib.components.i18n.I;
+import fr.zcraft.zlib.components.i18n.I18n;
 import fr.zcraft.zlib.components.scoreboard.Sidebar;
 import fr.zcraft.zlib.components.scoreboard.SidebarMode;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 
 public class ToasterSidebar extends Sidebar
@@ -66,18 +68,19 @@ public class ToasterSidebar extends Sidebar
                 insideTheToaster++;
         }
     }
-
+    
     @Override
     public List<String> getContent(Player player)
     {
+        Locale playerLocale = I18n.getPlayerLocale(player);
         return Arrays.asList(
-                I.t("{darkgreen}{bold}Cook"),
+                I.t(playerLocale, "{darkgreen}{bold}Cook"),
                 player.getDisplayName(),
                 "",
-                I.t("{yellow}{bold}Inside the toaster"),
+                I.t(playerLocale, "{yellow}{bold}Inside the toaster"),
                 insideTheToaster + "",
                 "",
-                I.t("{gold}{bold}Cooked"),
+                I.t(playerLocale, "{gold}{bold}Cooked"),
                 (toastsCount - insideTheToaster) + ""
         );
     }
@@ -86,9 +89,9 @@ public class ToasterSidebar extends Sidebar
     public String getTitle(Player player)
     {
         if(insideTheToaster > 0)
-            return I.t("{red}{bold}\u2668 Toaster \u2668");
+            return I.t(I18n.getPlayerLocale(player), "{red}{bold}\u2668 Toaster \u2668");
 
         else
-            return I.t("{blue}Toaster");
+            return I.t(I18n.getPlayerLocale(player), "{blue}Toaster");
     }
 }
