@@ -73,8 +73,8 @@ msgstr  "Pain {0} ajouté."
 #, java-format
 msgid   "One toast added."
 msgid_plural "{0} toasts added."
-msgstr[0]  "Un toast ajouté."
-msgstr[1]  "{0} pains grillés ajoutés."
+msgstr[0]  "Un pain ajouté."
+msgstr[1]  "{0} pains ajoutés."
 
 #. Output of the command /toaster list, without toasts.
 #: fr/zcraft/ztoaster/commands/ListCommand.java:74
