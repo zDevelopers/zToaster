@@ -19,11 +19,11 @@ msgstr  "Project-Id-Version: PACKAGE VERSION\n"
 
 #: fr/zcraft/ztoaster/ToasterSidebar.java:75
 msgid   "{darkgreen}{bold}Cook"
-msgstr  "{darkgreen}{bold}Cuisinier"
+msgstr  "{darkgreen}{bold}Cuistot"
 
 #: fr/zcraft/ztoaster/ToasterSidebar.java:78
 msgid   "{yellow}{bold}Inside the toaster"
-msgstr  "{yellow}{bold}Dans le toaster"
+msgstr  "{yellow}{bold}Dans le grille-pain"
 
 #: fr/zcraft/ztoaster/ToasterSidebar.java:81
 msgid   "{gold}{bold}Cooked"
@@ -31,57 +31,57 @@ msgstr  "{gold}{bold}Cuit"
 
 #: fr/zcraft/ztoaster/ToasterSidebar.java:90
 msgid   "{red}{bold}♨ Toaster ♨"
-msgstr  "{red}{bold}♨ Toaster ♨"
+msgstr  "{red}{bold}♨ Grille-pain ♨"
 
 #: fr/zcraft/ztoaster/ToasterSidebar.java:93
 msgid   "{blue}Toaster"
-msgstr  "{blue}Toaster"
+msgstr  "{blue}Grille-pain"
 
 #: fr/zcraft/ztoaster/ToastExplorer.java:44
 msgid   "{black}Toaster contents"
-msgstr  "{black}Contenu du toaster"
+msgstr  "{black}Contenu du grille-pain"
 
 #. Title of the cooked toast item in GUI
 #: fr/zcraft/ztoaster/ToastExplorer.java:57
 msgid   "{white}Cooked toast #{0}"
-msgstr  "{white}Toast cuit no. {0}"
+msgstr  "{white}Pain grillé no. {0}"
 
 #. Title of the raw toast item in GUI
 #: fr/zcraft/ztoaster/ToastExplorer.java:60
 msgid   "{white}Raw toast #{0}"
-msgstr  "{white}Toast cru no. {0}"
+msgstr  "{white}Pain pas grillé no. {0}"
 
 #: fr/zcraft/ztoaster/commands/AddCommand.java:56
 #, possible-java-format
 msgid   "DING! Toast {0} is ready !"
-msgstr  "DING ! Le toast {0} est prêt !"
+msgstr  "DING ! Le pain grillé {0} est prêt !"
 
 #: fr/zcraft/ztoaster/commands/AddCommand.java:64
 msgid   "{ce}Oh no! A toasted exception !"
-msgstr  "{ce}Oh non ! Une exception toastée !"
+msgstr  "{ce}Oh non ! Une exception grillée !"
 
 #: fr/zcraft/ztoaster/commands/AddCommand.java:65
 msgid   "{ce}See toaster logs for details."
-msgstr  "{ce}Voir les logs du toaster pour plus de détails."
+msgstr  "{ce}Voir les logs du grille-pain pour plus de détails."
 
 #: fr/zcraft/ztoaster/commands/AddCommand.java:69
 #, possible-java-format
 msgid   "Toast {0} added."
-msgstr  "Toast {0} ajouté."
+msgstr  "Pain {0} ajouté."
 
 #: fr/zcraft/ztoaster/commands/AddCommand.java:63
 #, java-format
 msgid   "One toast added."
 msgid_plural "{0} toasts added."
 msgstr[0]  "Un toast ajouté."
-msgstr[1]  "{0} toasts ajoutés."
+msgstr[1]  "{0} pains grillés ajoutés."
 
 #. Output of the command /toaster list, without toasts.
 #: fr/zcraft/ztoaster/commands/ListCommand.java:74
 msgid   "There are no toasts here ..."
-msgstr  "Il n'y a pas de toasts ici..."
+msgstr  "Il n'y a pas de pain grillé ici..."
 
 #: fr/zcraft/ztoaster/commands/ListCommand.java:79
 #, java-format
 msgid   "  Toast #{0}"
-msgstr  "  Toast no. {0}"
+msgstr  "  Pain grillé no. {0}"
