@@ -30,9 +30,9 @@
 
 package fr.zcraft.ztoaster;
 
-import fr.zcraft.zlib.components.gui.ExplorerGui;
-import fr.zcraft.zlib.components.gui.GuiUtils;
-import fr.zcraft.zlib.components.i18n.I;
+import fr.zcraft.quartzlib.components.gui.ExplorerGui;
+import fr.zcraft.quartzlib.components.gui.GuiUtils;
+import fr.zcraft.quartzlib.components.i18n.I;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 

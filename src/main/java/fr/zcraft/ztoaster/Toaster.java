@@ -30,13 +30,13 @@
 
 package fr.zcraft.ztoaster;
 
-import fr.zcraft.zlib.components.commands.Commands;
-import fr.zcraft.zlib.components.gui.Gui;
-import fr.zcraft.zlib.components.i18n.I18n;
-import fr.zcraft.zlib.components.scoreboard.Sidebar;
-import fr.zcraft.zlib.components.scoreboard.SidebarScoreboard;
-import fr.zcraft.zlib.core.ZPlugin;
-import fr.zcraft.zlib.tools.PluginLogger;
+import fr.zcraft.quartzlib.components.commands.Commands;
+import fr.zcraft.quartzlib.components.gui.Gui;
+import fr.zcraft.quartzlib.components.i18n.I18n;
+import fr.zcraft.quartzlib.components.scoreboard.Sidebar;
+import fr.zcraft.quartzlib.components.scoreboard.SidebarScoreboard;
+import fr.zcraft.quartzlib.core.QuartzPlugin;
+import fr.zcraft.quartzlib.tools.PluginLogger;
 import fr.zcraft.ztoaster.commands.AddCommand;
 import fr.zcraft.ztoaster.commands.ListCommand;
 import fr.zcraft.ztoaster.commands.OpenCommand;
@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 
-public class Toaster extends ZPlugin implements Listener
+public class Toaster extends QuartzPlugin implements Listener
 {
     /**
      * A counter for all the toasts created (until toaster restart).

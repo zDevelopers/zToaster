@@ -30,10 +30,10 @@
 
 package fr.zcraft.ztoaster.commands;
 
-import fr.zcraft.zlib.components.commands.Command;
-import fr.zcraft.zlib.components.commands.CommandException;
-import fr.zcraft.zlib.components.commands.CommandInfo;
-import fr.zcraft.zlib.components.i18n.I;
+import fr.zcraft.quartzlib.components.commands.Command;
+import fr.zcraft.quartzlib.components.commands.CommandException;
+import fr.zcraft.quartzlib.components.commands.CommandInfo;
+import fr.zcraft.quartzlib.components.i18n.I;
 import fr.zcraft.ztoaster.Toast;
 import fr.zcraft.ztoaster.ToasterWorker;
 import org.bukkit.entity.Player;

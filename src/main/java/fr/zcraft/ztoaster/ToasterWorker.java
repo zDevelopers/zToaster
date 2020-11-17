@@ -31,12 +31,12 @@
 
 package fr.zcraft.ztoaster;
 
-import fr.zcraft.zlib.components.gui.Gui;
-import fr.zcraft.zlib.components.i18n.I;
-import fr.zcraft.zlib.components.worker.Worker;
-import fr.zcraft.zlib.components.worker.WorkerCallback;
-import fr.zcraft.zlib.components.worker.WorkerRunnable;
-import fr.zcraft.zlib.tools.PluginLogger;
+import fr.zcraft.quartzlib.components.gui.Gui;
+import fr.zcraft.quartzlib.components.i18n.I;
+import fr.zcraft.quartzlib.components.worker.Worker;
+import fr.zcraft.quartzlib.components.worker.WorkerCallback;
+import fr.zcraft.quartzlib.components.worker.WorkerRunnable;
+import fr.zcraft.quartzlib.tools.PluginLogger;
 import org.bukkit.entity.Player;
 
 public class ToasterWorker extends Worker

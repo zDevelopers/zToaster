@@ -29,10 +29,10 @@
  */
 package fr.zcraft.ztoaster;
 
-import fr.zcraft.zlib.components.i18n.I;
-import fr.zcraft.zlib.components.i18n.I18n;
-import fr.zcraft.zlib.components.scoreboard.Sidebar;
-import fr.zcraft.zlib.components.scoreboard.SidebarMode;
+import fr.zcraft.quartzlib.components.i18n.I;
+import fr.zcraft.quartzlib.components.i18n.I18n;
+import fr.zcraft.quartzlib.components.scoreboard.Sidebar;
+import fr.zcraft.quartzlib.components.scoreboard.SidebarMode;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
